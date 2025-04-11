@@ -15,8 +15,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'	
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
       # Set up Maven cache
       - name: Cache Maven packages
         # This action allows caching dependencies and build outputs to improve workflow execution time.
@@ -51,7 +51,7 @@ jobs:
         # Download the artifact which was uploaded in the Build Archive's job
         uses: actions/download-artifact@v4
         with:
-          name: artifact      
+          name: artifact
         # Deploy the artifact (JAR) into AWS Beanstalk
         # https://github.com/marketplace/actions/elastic-beanstalk-deployer
       - name: Deploy to EB
@@ -63,5 +63,5 @@ jobs:
           application_name: TodoBootApp # Application name we created in Elastic Beanstalk
           environment_name: TodoBootApp-env # Environment name we created in Elastic Beanstalk
           version_label: ${{ github.SHA }}
-          region: ap-northeast-2 # VERY IMPORTANT: AWS Region where initially Application was created in AWS EBS. We created in us-east-1 which is N-Virginia
+          region: ap-northeast-3 # VERY IMPORTANT: AWS Region where initially Application was created in AWS EBS. We created in us-east-1 which is N-Virginia
           deployment_package: todo.jar # Download artifacts from previous job
