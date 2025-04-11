@@ -26,7 +26,7 @@ public class MemberController {
 	}
 
 	//회원가입
-	/*
+	/*  
 	    Talend API 에서 다음과 같이 JSON 요청하자.
 	    POST 요청
 	    header값: Content-type:application/json
